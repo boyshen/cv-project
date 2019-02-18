@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>预测猫狗类别</title>
+    {% block scripts %}
+        <script src="{{url_for('static',filename='js/jquery-1.9.1.min.js')}}"></script>
+    {%endblock%}
+    {%block styles%}
+        <link href={{url_for('static',filename='css/index.css')}} rel="stylesheet" type="text/css"/>
+    {%endblock%}
+</head>
+<script>
+    function upload_file(){
+            var formData = new FormData($('#uploadForm')[0]);
+            $.ajax({
+                url:'/upload',
+                type:'post',
+                contentType:false,
+                data:formData,
+                processData:false,
+                beforeSend:function(XMLHttpRequest) {
+                    var winNode = $("#loading");
+                    //使用jquery的show方法
+                    winNode.fadeIn("slow");//淡入淡出fadeOut
+                    $("#loading").html("<img src='{{url_for('static',filename='images/loading.gif')}}' style='text-align:center;margin:0 auto;'>" +
+                        "<p style='color:#999;font-size:14px'>正在处理，请稍后……</p>");
+                },
+                success:function(info){
+                    console.log(info)
+
+                    if (info.status == 0){
+                        console.log("upload file success ")
+                        $('#show_img').attr('src',"/show_image/"+info.file);
+
+                        if (info.class == 'dog') {
+                            $('#pred_class').text("狗")
+                        }else if (info.class == 'cat'){
+                            $('#pred_class').text("猫")
+                        }
+
+                        $('#pred_prob').text(info.pred)
+
+                    }else{
+                        console.log("upload file Fail")
+                        alert(info.msg)
+                    }
+
+                    var Node = $("#loading");
+                    Node.hide();  //隐藏
+                },
+                error:function(err){
+                    var Node = $("#loading");
+                    Node.hide();  //隐藏
+
+                    console.log(err)
+                    alert("上传失败！")
+                }
+            });
+        }
+</script>
+<body>
+    <div id="header">
+        <h1>猫狗预测</h1>
+    </div>
+    <div id="nav">
+        <h3>预测</h3>
+    </div>
+    <div>
+        <div id="loading"></div>
+    </div>
+    <div id="section">
+        <div id="show_img_div" align="center">
+            <div>
+                <img src="{{url_for('static',filename='images/woof_meow.jpg')}}" id="show_img",width="400",height="400">
+            </div>
+            <div>
+                <table>
+                    <tr><th align="center">预测结果</th></tr>
+                    <tr>
+                        <td align="left">类别:</td>
+                        <td align="left" id="pred_class"></td>
+                    </tr>
+                    <tr>
+                        <td align="left">概率:</td>
+                        <td align="left" id="pred_prob"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div id="fileupload_div" align="center">
+            <div>
+                <form id="uploadForm" enctype="multipart/form-data">
+                    <input type="file" name="file" id="iFile">
+                    <input type="button" value="上传文件" onclick="upload_file()">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <h2><a href="http://www.w3school.com.cn">点此查看原码</a> </h2>
+        <h4>auther : shenpinggang</h4>
+        <h4>date : 2019-02-17 </h4>
+    </div>
+</body>
+</html>

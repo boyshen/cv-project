@@ -1,0 +1,43 @@
+#header {
+    background-color:black;
+    color:white;
+    text-align:center;
+    padding:5px;
+}
+#nav {
+    line-height:30px;
+    background-color:#eeeeee;
+    height:600px;
+    width:200px;
+    float:left;
+    padding:5px;
+}
+#section {
+    width: 1000px;
+    height:600px;
+    float:left;
+    padding:10px;
+}
+#footer {
+    background-color:black;
+    color:white;
+    clear:both;
+    text-align:center;
+    padding:5px;
+}
+#show_img_div {
+    height: 500px;
+}
+#fileupload_div{
+    height: 50px;
+}
+#loading{
+    display: none;
+    position: absolute;
+    left:650px;
+    top:340px;
+    width: 100px;
+    height: 200px;
+    z-index: 999;
+    float: left;
+}
