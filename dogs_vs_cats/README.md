@@ -33,73 +33,7 @@ pandas=0.24.0
 
 ## 项目结构
 
-.
-├── abnormal_picture		# 项目中检查的异常图片信息
-│   ├── abnormal_image.txt  					
-│   ├── resnet50_check.txt
-│   └── xception_check.txt
-├── bottlebeck_features     # 使用resnet50、inceptionV3、xception 提取的特征向量文件
-│   ├── InceptionV3_bottlebeck_features.h5py
-│   ├── resnet50_bottlebeck_features.h5py
-│   └── xception_bottlebeck_features.h5py
-├── Data_preprocessing.py   # 图片处理python文件。包含图片处理的相关源码
-├── extract_bottleneck_features.py # 提取特征向量的python文件
-├── images  # 项目文件中的图片
-│   ├── CNN.png
-│   ├── data-dir.png
-│   ├── datadir.png
-│   ├── Imagenet.png
-│   ├── kaggle_score.png
-│   ├── kaggle-score.png
-│   ├── keras_modle.png
-│   ├── model.png
-│   ├── Neuron2.png
-│   ├── Neuron3.png
-│   ├── ResNet0.png
-│   ├── ResNet2.png
-│   ├── ResNet3.png
-│   ├── symlink1.png
-│   ├── webapp-dir.png
-│   └── web_predict.gif
-├── model  # 训练好的最佳模型
-│   └── dogs_vs_cats_best_model.hdf5
-├── model_func.py  # 模型python文件，包含构建模型、训练模型等
-├── predict_dogs_vs_cats.csv  # 预测结果
-├── __pycache__
-│   ├── Custom_model.cpython-36.pyc
-│   ├── Data_preprocessing.cpython-36.pyc
-│   ├── model_func.cpython-36.pyc
-│   ├── Resnet50_preprocessing.cpython-36.pyc
-│   └── Xception_preprocessing.cpython-36.pyc
-├── README.md
-├── requirements  # 环境配置文件
-│   ├── dogs_vs_cats_linux-pip.txt
-│   └── dogs_vs_cats_linux.yaml
-├── Resnet50_preprocessing.py   # 使用resnet50检测异常图片的python文件
-├── Untitled.ipynb
-├── Web_APP      # web 应用程序目录
-│   ├── config.py    # web 应用配置文件
-│   ├── Data_preprocessing.py
-│   ├── dogs_vs_cats_linux-pip.txt   # 环境依赖库
-│   ├── dogs_vs_cats_linux.yaml      # conda 构建环境文件
-│   ├── image_predict.py
-│   ├── __pycache__
-│   │   ├── config.cpython-36.pyc
-│   │   ├── Data_preprocessing.cpython-36.pyc
-│   │   └── image_predict.cpython-36.pyc
-│   ├── static
-│   │   ├── css
-│   │   │   └── index.css
-│   │   ├── images
-│   │   │   ├── loading.gif
-│   │   │   └── woof_meow.jpg
-│   │   └── js
-│   │       └── jquery-1.9.1.min.js
-│   ├── templates
-│   │   ├── index.html
-│   │   └── woof_meow.jpg
-│   └── web_app.py    # web应用程序启动文件。使用python web_app.py 启动文件。
-└── Xception_preprocessing.py # 使用xception 检查异常数据python文件
+![title](images/project-dir.png)
 
 13 directories, 54 files
 
