@@ -12,7 +12,7 @@ kaggle项目地址：https://www.kaggle.com/c/dogs-vs-cats-redux-kernels-edition
 
 ## 系统环境
 
-ubuntu 操作系统。在aws配置系统环境中搜 udacity-aind2 
+linux ubuntu 操作系统。在aws配置系统环境中搜 udacity-aind2 
 
 ## 训练时间
 
@@ -20,7 +20,7 @@ ubuntu 操作系统。在aws配置系统环境中搜 udacity-aind2
 
 ## 相关库
 
-主要使用的库:
+使用python3.6的库，其他主要应用库
 
 numpy=1.15.4
 keras=2.2.4
@@ -41,7 +41,7 @@ pandas=0.24.0
 
 链接:https://pan.baidu.com/s/1NUzNzdVmZEj8ImCK5zx_1w  密码:54ap
 
-## 项目步骤
+## 项目使用
 
 1. 安装相关库
 
@@ -64,6 +64,7 @@ python web_app.py
 ```
 注意查看 config.py 配置文件。配置文件中可修改监听的网络地址和端口，以及上传图片的存储路径，预训练模型文件路径
 
+web 端效果预览：
 ![title](images/web_predict.gif)
 
 
