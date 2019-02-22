@@ -22,12 +22,14 @@ linux ubuntu 操作系统。在aws配置系统环境中搜 udacity-aind2
 
 使用python3.6的库，其他主要应用库
 
+```
 numpy=1.15.4
 keras=2.2.4
 matplotlib=3.0.2
 tensorflow=1.12.0
 h5py=2.9.0
 pandas=0.24.0
+```
 
 详细可见目录中文件：requirements/dogs_vs_cats_linux-pip.txt
 
@@ -35,7 +37,7 @@ pandas=0.24.0
 
 ![title](images/project-dir.png)
 
-13 directories, 54 files
+14 directories, 55 files
 
 特征向量文件如果需要可在此下载：
 
@@ -66,6 +68,5 @@ python web_app.py
 
 web 端效果预览：
 ![title](images/web_predict.gif)
-
 
 
